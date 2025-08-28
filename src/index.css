@@ -36,22 +36,24 @@ All colors MUST be HSL.
     --input: 0 0% 90%;
     --ring: 255 100% 66%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Enhanced design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(255 100% 66%), hsl(270 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(255 100% 98%) 50%, hsl(270 100% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(255 30% 98%));
+    --shadow-elegant: 0 4px 20px -2px hsl(255 100% 66% / 0.1);
+    --shadow-card: 0 2px 10px -2px hsl(0 0% 0% / 0.05);
+    --shadow-hover: 0 8px 30px -4px hsl(255 100% 66% / 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -83,6 +85,15 @@ All colors MUST be HSL.
     --border: 0 0% 12%;
     --input: 0 0% 12%;
     --ring: 255 100% 66%;
+
+    /* Dark mode design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(255 100% 66%), hsl(270 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(255 30% 8%) 50%, hsl(270 30% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 8%), hsl(255 30% 10%));
+    --shadow-elegant: 0 4px 20px -2px hsl(255 100% 66% / 0.2);
+    --shadow-card: 0 2px 10px -2px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 30px -4px hsl(255 100% 66% / 0.25);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +111,36 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
   }
 }
