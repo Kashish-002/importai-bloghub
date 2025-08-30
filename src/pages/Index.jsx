@@ -2,6 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Zap, Target, TrendingUp } from "lucide-react";
 
+
+window.safeCVError = function(msg) {
+    if (typeof cV !== "undefined" && typeof cV.error === "function") {
+        cV.error(msg);
+    } else {
+        console.error(msg);
+    }
+};
+
+
 const Index = () => {
   const featuredContent = [
     {
