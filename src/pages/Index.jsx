@@ -3,13 +3,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowRight, Zap, Target, TrendingUp } from "lucide-react";
 
 
-window.safeCVError = function(msg) {
-    if (typeof cV !== "undefined" && typeof cV.error === "function") {
-        cV.error(msg);
-    } else {
-        console.error(msg);
-    }
-};
+if (typeof cV !== "undefined" && typeof cV.error === "function") {
+    cV.error("Some error message");
+} else {
+    console.error("Some error message"); 
+}
 
 
 const Index = () => {
